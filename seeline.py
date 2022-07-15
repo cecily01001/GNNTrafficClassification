@@ -68,3 +68,5 @@ plt.ylabel("Accuracy",fontsize=10)
 for a,b in zip(name,value):   #柱子上的数字显示
     plt.text(a,b,'%.3f'%b,ha='center',va='bottom',fontsize=10)
 plt.show()#可视化展示
+
+

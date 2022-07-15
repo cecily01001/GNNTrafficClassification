@@ -5,7 +5,7 @@
       <paths name="pc">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/pcl/PangBo/pro/GNNTrafficClassification" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/user1/PangBo/GNNTrafficClassification" local="$PROJECT_DIR$" web="/" />
             <mapping local="" />
           </mappings>
         </serverdata>

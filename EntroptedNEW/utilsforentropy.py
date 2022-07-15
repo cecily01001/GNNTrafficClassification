@@ -3,20 +3,36 @@ from scapy.layers.dns import DNS
 from scapy.layers.inet import TCP
 from scapy.packet import Padding
 from scapy.utils import rdpcap
-PREFIX_TO_Malware_ID = {
-    'Artemis': 0,
-    'Emotet': 1,
-    'Exploit': 2,
-    'Packed': 3,
-    'Trojan-FKME': 4,
+# for app identification
+PREFIX_TO_ENTROPY_ID = {
+    'AIMchat2': 0,
+    'email1b': 1,
+    'facebook_audio2a': 2,
+    # 'ftps_up_2a': 3,
+    'ftps_up_2b': 3,
+    'hangouts_audio3': 4,
+    # 'hangouts_audio4': 4,
+    # 'scpdown1': 5,
+    'scpdown5': 5,
+    'sftp_up_2a': 6,
+    # 'skype_chat1a': 7,
+    'skype_video1a': 7,
+    'toryoutube2': 8,
+    'vimeo': 9,
+    'youtube2': 10,
 }
-
-ID_TO_Malware = {
-    0:'Artemis',
-    1:'Emotet',
-    2:'Exploit',
-    3:'Packed',
-    4:'Trojan',
+ID_TO_ENTROPY = {
+    0: 'AIM Chat',
+    1: 'Email',
+    2: 'Facebook',
+    3: 'FTPS',
+    4: 'Hangouts',
+    5: 'SCP',
+    6: 'SFTP',
+    7: 'Skype',
+    8: 'Tor',
+    9: 'Vimeo',
+    10: 'Youtube',
 }
 def read_pcap(path: Path):
     packets = rdpcap(str(path))

@@ -50,18 +50,18 @@ def pad_udp(packet):
 
 
 def transform_pcap(path,output_dir_path):
-    # prefix = path.name.split('/')
-    # for i in prefix:
-    #     name=i
-    # for i, packet in enumerate(read_pcap(path)):
-    #     # packet = remove_ether_header(packet)
-    #     # # packet = pad_udp(packet)
-    #     # packet = mask_ip(packet)
-    #     wrpcap(output_dir_path+'/'+name, packet, append=True)
+    prefix = path.name.split('/')
+    for i in prefix:
+        name=i
+    for i, packet in enumerate(read_pcap(path)):
+        # packet = remove_ether_header(packet)
+        # packet = pad_udp(packet)
+        packet = mask_ip(packet)
+        wrpcap(output_dir_path+'/'+name, packet, append=True)
     shutil.copy(path, output_dir_path)
     print(path, 'Done')
 
-paths = [['/home/pcl/PangBo/pro/DeepTraffic/encrypted_traffic_classification/3_ProcessedSession/FilteredSession/Test', '/home/pcl/PangBo/pro/GNNTrafficClassification/Dataset/APP/testset'],['3_ProcessedSession/TrimedSession/Test', '3_ProcessedSession/TrimedSession/Test2']]
+paths = [['/home/pcl/PangBo/pro/GNNTrafficClassification/Splite/3_ProcessedSession/FilteredSession/Train', '/home/pcl/PangBo/pro/GNNTrafficClassification/Dataset/Splite_Session/Entropy/train']]
 data_dir_path = paths[0][0]
 output_dir_path=paths[0][1]
 data_dir_path = Path(data_dir_path)
